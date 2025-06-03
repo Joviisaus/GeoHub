@@ -23,45 +23,44 @@ const product: CollectionEntry<"products">[] = (
 );
 
 // Define variables for page content
-const title: string = "Products";
+const title: string = "资料";
 const subTitle: string =
-  "Explore the durability and precision of ScrewFast tools, designed for both professionals and enthusiasts. Each of our products is crafted with precision and built to last, ensuring you have the right tool for every job.";
+  "Welcome to the fascinating world of Computer Graphics!";
 
 // Testimonial data that will be rendered in the component
 const testimonials = [
   // First testimonial data
-  {
-    content:
-      " \"Since switching to ScrewFast's hardware tools, the efficiency on our construction sites has skyrocketed. The durability of the hex bolts and precision of the machine screws are simply unmatched. It's refreshing to work with a company that truly understands the daily demands of the industry.\" ",
-    author: "Jason Clark",
-    role: "Site Foreman | TopBuild",
-    avatarSrc:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
-  },
-  // Second testimonial data
-  {
-    content:
-      " \"As an interior designer, I'm always looking for high-quality materials and tools that help bring my visions to life. ScrewFast's mixed screws assortment has been a game-changer for my projects, providing the perfect blend of quality and variety. The outstanding customer support was just the cherry on top!\" ",
-    author: "Maria Gonzalez",
-    role: "Interior Designer | Creative Spaces",
-    avatarSrc:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
-  },
-  // Third testimonial data
-  {
-    content:
-      " \"I’ve been a professional carpenter for over 15 years, and I can sincerely say that ScrewFast’s tap bolts and nuts are some of the best I've used. They grip like no other, and I have full confidence in every joint and fixture. Plus, the service is impeccable – they truly care about my project's success.\" ",
-    author: "Richard Kim",
-    role: "Master Carpenter | WoodWright",
-    avatarSrc:
-      "https://images.unsplash.com/photo-1474176857210-7287d38d27c6?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80",
-    avatarAlt: "Image Description",
-  },
+{
+content: "As a computer graphics pioneer, I've dedicated my career to bridging mathematics and visual art. The Sutherland–Hodgman algorithm laid groundwork for real-time rendering, but collaboration with brilliant minds truly shaped the field. Always remember: innovation grows when curiosity meets rigor.",
+author: "Ivan Sutherland",
+role: "Computer Graphics Father | VR Pioneer",
+avatarSrc: "https://pic4.zhimg.com/v2-3da6c772c2295a78732d19056d5232ef_b.jpg",
+avatarAlt: "Image Description"
+},
+{
+content: "Building Pixar wasn't just about code—it was about empowering artists with technology. RenderMan and Z-buffering were tools, but the magic came from trusting creative chaos. Failures are the architects of breakthroughs; embrace them.",
+author: "Edwin Catmull",
+role: "Pixar Co-founder | Turing Award Laureate",
+avatarSrc: "https://ts4.tc.mm.bing.net/th/id/OIP-C.wzg7QCw29PJ3N47ZTMVd4AAAAA?rs=1&pid=ImgDetMain",
+avatarAlt: "Image Description"
+},
+{
+content: "Silicon Graphics turned graphics from academia to blockbuster. The 'geometry pipeline' wasn't just hardware—it was a 宣言 for pushing limits. If technology feels like a barrier, rewrite the rules.",
+author: "James Clark",
+role: "SGI Founder | Geometry Pipeline Innovator",
+avatarSrc: "https://upload.wikimedia.org/wikipedia/commons/0/07/James_H._Clark.jpg",
+avatarAlt: "Image Description"
+},
+{
+content: "My work on the Rendering Equation was never just about equations—it's about capturing the soul of light. Graphics is the art of translating physics into pixels, where every bounce tells a story. Keep chasing the unseen details.",
+author: "James Kajiya",
+role: "Rendering Equation Author | Global Illumination Pioneer",
+avatarSrc: "https://wikiwandv2-19431.kxcdn.com/_next/image?url=https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Jim_Kajiya.jpg/640px-Jim_Kajiya.jpg&w=640&q=50",
+avatarAlt: "Image Description"
+},
 ];
 
-const pageTitle: string = `Products | ${SITE.title}`;
+const pageTitle: string = `资料 | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -100,7 +99,7 @@ const pageTitle: string = `Products | ${SITE.title}`;
           )
         }
       </div>
-      <PrimaryCTA title="Customer Stories" url="#testimonials" noArrow={true} />
+      <PrimaryCTA title="Pioneers Say" url="#testimonials" noArrow={true} />
     </div>
     <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
     <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
@@ -118,18 +117,19 @@ const pageTitle: string = `Products | ${SITE.title}`;
     </section>
   </div>
   <!--Features statistics section-->
-  <FeaturesStatsAlt
-    title="Why Choose ScrewFast?"
-    subTitle="Transform your ideas into tangible results with ScrewFast tools. Whether you're starting with a sketch on a napkin or diving into a comprehensive construction project, our tools are engineered to help you build with confidence."
-    benefits={[
-      "Robust and reliable tools for long-lasting performance.",
-      "Innovative solutions tailored to modern construction needs.",
-      "Customer support dedicated to your project's success.",
-    ]}
-  />
+<FeaturesStatsAlt
+title="Why Dive into Geometry and Computer Graphics?"
+subTitle="Unleash the power of visual creation and spatial understanding with geometry and computer graphics. From crafting immersive virtual worlds to optimizing 3D models for real - world applications, these fields offer endless opportunities to turn imagination into digital reality."
+benefits={[
+"Precision - driven algorithms for accurate 3D modeling and rendering.",
+"Innovative techniques bridging mathematics and art for stunning visual effects.",
+"Cutting - edge tools enabling the development of interactive virtual and augmented reality experiences.",
+"Applications spanning across industries like gaming, film, architecture, and robotics."
+]}
+/>
   <!--Testimonials section-->
   <TestimonialsSectionAlt
-    title="What Our Customers Say"
+    title="What Our Graphics Pioneers Say"
     testimonials={testimonials}
   />
 </MainLayout>

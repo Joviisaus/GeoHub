@@ -32,26 +32,9 @@ export async function getStaticPaths() {
 const { product } = Astro.props;
 
 const pageTitle: string = `${product.data.title} | ${SITE.title}`;
-const metaDescription = product.data.description;
-const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
 ---
 
-<MainLayout
-  title={pageTitle}
-  customDescription={metaDescription}
-  customOgTitle={ogTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "@id": `https://screwfast.uk/products/${product.data.title.toLowerCase().replace(/\s+/g, "-")}`,
-    name: product.data.title,
-    description: product.data.description,
-    brand: {
-      "@type": "Brand",
-      name: "ScrewFast",
-    },
-  }}
->
+<MainLayout title={pageTitle}>
   <div id="overlay" class="fixed inset-0 bg-neutral-200 dark:bg-neutral-800">
   </div>
 
@@ -61,7 +44,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
     <div>
       <p
         id="fadeText"
-        class="mb-8 max-w-prose font-light text-pretty text-neutral-700 sm:text-xl dark:text-neutral-300"
+        class="mb-8 max-w-prose text-pretty font-light text-neutral-700 dark:text-neutral-300 sm:text-xl"
       >
         {product.data.main.content}
       </p>
@@ -71,7 +54,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
     >
       <div id="fadeInUp">
         <h1
-          class="block text-4xl font-bold tracking-tighter text-neutral-800 sm:text-5xl md:text-6xl lg:text-7xl dark:text-neutral-200"
+          class="block text-4xl font-bold tracking-tighter text-neutral-800 dark:text-neutral-200 sm:text-5xl md:text-6xl lg:text-7xl"
         >
           {product.data.title}
         </h1>
@@ -116,7 +99,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
           <div class="grid gap-12 md:grid-cols-2">
             <div class="lg:w-3/4">
               <h2
-                class="text-3xl font-bold tracking-tight text-balance text-neutral-800 md:leading-tight lg:text-4xl dark:text-neutral-200"
+                class="text-balance text-3xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:leading-tight lg:text-4xl"
               >
                 {product.data.longDescription.title}
               </h2>
@@ -138,7 +121,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
                 product.data.descriptionList.map((list) => (
                   <div class="flex">
                     <div>
-                      <h3 class="text-base font-bold text-neutral-800 sm:text-lg dark:text-neutral-200">
+                      <h3 class="text-base font-bold text-neutral-800 dark:text-neutral-200 sm:text-lg">
                         {list.title}
                       </h3>
                       <p class="mt-1 text-neutral-600 dark:text-neutral-400">
@@ -172,7 +155,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
             </div>
             {
               product.data.specificationsRight ? (
-                <div class="mt-6 max-w-md space-y-6 md:mt-0 md:ml-auto">
+                <div class="mt-6 max-w-md space-y-6 md:ml-auto md:mt-0">
                   {product.data.specificationsRight?.map((spec) => (
                     <div>
                       <h3 class="block font-bold text-neutral-800 dark:text-neutral-200">
@@ -185,7 +168,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
                   ))}
                 </div>
               ) : product.data.tableData ? (
-                <div class="mt-6 space-y-6 md:mt-0 md:ml-auto">
+                <div class="mt-6 space-y-6 md:ml-auto md:mt-0">
                   <div class="flex flex-col">
                     <div class="-m-1.5 overflow-x-auto">
                       <div class="inline-block min-w-full p-1.5 align-middle">
@@ -197,7 +180,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
                                   (header) => (
                                     <th
                                       scope="col"
-                                      class="px-6 py-3 text-start text-xs font-medium text-neutral-500 uppercase dark:text-neutral-500"
+                                      class="px-6 py-3 text-start text-xs font-medium uppercase text-neutral-500 dark:text-neutral-500"
                                     >
                                       {header}
                                     </th>
@@ -213,7 +196,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
                                     {/* Iterate through each cell value in the row's description array */}
                                     {rowData.map((cellValue) => (
                                       // Render each cell value in its own <td> element
-                                      <td class="px-6 py-4 text-sm font-medium whitespace-nowrap text-neutral-600 dark:text-neutral-400">
+                                      <td class="whitespace-nowrap px-6 py-4 text-sm font-medium text-neutral-600 dark:text-neutral-400">
                                         {cellValue}
                                       </td>
                                     ))}
@@ -238,7 +221,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
   <div id="tabs-with-card-3" class="hidden" role="tabpanel">
     <div class="mx-auto mb-20 flex w-full md:mb-28 2xl:w-4/5">
       <div
-        class="relative top-12 left-12 z-10 overflow-hidden rounded-xl shadow-lg md:top-16 md:left-12 md:-ml-12 lg:ml-0"
+        class="relative left-12 top-12 z-10 overflow-hidden rounded-xl shadow-lg md:left-12 md:top-16 md:-ml-12 lg:ml-0"
       >
         {
           product.data.blueprints.first && (
@@ -349,7 +332,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
         changeHeadingStyle(
           btn,
           ["text-neutral-800", "dark:text-neutral-200"],
-          ["text-orange-400", "dark:text-orange-300"]
+          ["text-sky-400", "dark:text-sky-300"]
         );
       }
     }
@@ -372,7 +355,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
 
       changeHeadingStyle(
         button,
-        ["text-orange-400", "dark:text-orange-300"],
+        ["text-sky-400", "dark:text-sky-300"],
         ["text-neutral-800", "dark:text-neutral-200"]
       );
     }
@@ -394,7 +377,7 @@ const ogTitle = `${product.data.title} | Hardware Tools | ScrewFast`;
     if (tabButtons.length > 0) {
       changeHeadingStyle(
         tabButtons[0],
-        ["text-orange-400", "dark:text-orange-300"],
+        ["text-sky-400", "dark:text-sky-300"],
         []
       );
     }

@@ -10,7 +10,7 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
+import heroImage from "@images/hero-image.png";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
@@ -29,21 +29,21 @@ const avatarSrcs: Array<string> = [
 ---
 
 <MainLayout>
-  <AnnouncementBanner
+  <!-- <AnnouncementBanner
     btnId="dismiss-button"
     btnTitle="Explore ScrewFast on GitHub"
     url="https://github.com/mearashadowfax/ScrewFast"
-  />
+  /> -->
 
   <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
-    primaryBtn="Start Exploring"
+    title=`Start your meshing with <span
+        class="text-teal-500 dark:text-teal-400">Geo Hub</span>`
+    subTitle='大连理工大学大型工业软件特色班传帮带'
+    primaryBtn="相关资料"
     primaryBtnURL="/products"
-    secondaryBtn="Contact Sales Team"
-    secondaryBtnURL="/contact"
-    withReview={true}
+    secondaryBtn="编程任务"
+    secondaryBtnURL="/blog"
+    withReview={false}
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
     starCount={4}
@@ -52,22 +52,22 @@ const avatarSrcs: Array<string> = [
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
   />
 
-  <ClientsSection
+  <!-- <ClientsSection
     title="Trusted by Industry Leaders"
     subTitle="Experience the reliability chosen by industry giants."
     partners={partnersData}
-  />
+  /> -->
 
-  <FeaturesGeneral
+  <!-- <FeaturesGeneral
     title="Meeting Industry Demands"
     subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
     src={featureImage}
     alt="ScrewFast products in floating boxes"
     features={features}
-  />
+  /> -->
 
-  <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
+  <!-- <FeaturesNavs
+    title=`Customize <span class="text-teal-500 dark:text-teal-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
     tabs={[
       {
         heading: "Cutting-Edge Tools",
@@ -75,7 +75,7 @@ const avatarSrcs: Array<string> = [
           "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
         svg: "tools",
         src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
+        alt: "teal and black heavy equipment on brown grass field",
         first: true,
       },
       {
@@ -96,9 +96,9 @@ const avatarSrcs: Array<string> = [
         alt: "Gray metal building frame near tower crane during daytime",
       },
     ]}
-  />
+  /> -->
 
-  <TestimonialsSection
+  <!-- <TestimonialsSection
     title="Fast-Track Your Projects"
     subTitle="At ScrewFast, we ensure a swift start with instant account setup. Experience the speed of construction redefined."
     ;
@@ -133,15 +133,15 @@ const avatarSrcs: Array<string> = [
         description: "quicker assembly using innovative fastening solutions",
       },
     ]}
-  />
+  /> -->
 
-  <PricingSection pricing={pricing} />
+  <!-- <PricingSection pricing={pricing} />
 
-  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <FAQ title="Frequently<br />asked questions" faqs={faqs} /> -->
 
   <HeroSectionAlt
     title="Let's Build Together"
-    subTitle="ScrewFast is an open-source template, meticulously crafted with Astro, Tailwind CSS, and Preline UI frameworks."
-    url="https://github.com/mearashadowfax/ScrewFast"
+    subTitle="本站刚刚起步，框架比较简单，功能也比较单一，欢迎大家积极 PR！"
+    url="https://github.com/Joviisaus/GeoHub"
   />
 </MainLayout>

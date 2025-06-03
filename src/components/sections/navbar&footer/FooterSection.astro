@@ -1,6 +1,6 @@
 ---
 // Import the necessary dependencies
-import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
+//import FooterSocialLink from "@components/ui/links/FooterSocialLink.astro";
 import EmailFooterInput from "@components/ui/forms/input/EmailFooterInput.astro";
 import enStrings from "@utils/navigation.ts";
 import frStrings from "@utils/fr/navigation.ts";
@@ -44,7 +44,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
                     {link.name}
                   </a>
                   {section.section === "Company" && index === 2 ? (
-                    <span class="ms-1 inline rounded-lg bg-orange-500 px-2 py-1 text-xs font-bold text-neutral-50">
+                    <span class="ms-1 inline rounded-lg bg-sky-500 px-2 py-1 text-xs font-bold text-neutral-50">
                       We're hiring!
                     </span>
                   ) : null}
@@ -55,7 +55,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
         ))
       }
 
-      <div class="col-span-2">
+      <!-- <div class="col-span-2">
         <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
           {sectionThreeTitle}
         </h3>
@@ -66,10 +66,10 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
             {sectionThreeContent}
           </p>
         </form>
-      </div>
+      </div> -->
     </div>
 
-    <div
+    <!-- <div
       class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
     >
       <div class="flex items-center justify-between">
@@ -82,10 +82,10 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
             rel="noopener noreferrer">gulamoff</a
           >.
         </p>
-      </div>
+      </div> -->
 
       <!-- Social Brands -->
-      <div>
+      <!-- <div>
         <FooterSocialLink url={strings.socialLinks.facebook}
           ><Icon name="facebookFooter" />
         </FooterSocialLink>
@@ -105,7 +105,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
         <FooterSocialLink url={strings.socialLinks.slack}
           ><Icon name="slackFooter" />
         </FooterSocialLink>
-      </div>
+      </div> -->
     </div>
 
     <script>

@@ -1,7 +1,7 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "MeshHub-DUT",
+  title: "GeoHub-DUT",
   tagline: "大连理工大学大型工业软件特色班传帮带",
   description:
     "大连理工大学大型工业软件特色班传帮带，致力于培养具有国际视野、创新精神和实践能力的高素质应用型人才。我们提供丰富的课程、实习机会和行业交流平台，帮助学生在大型工业软件领域取得成功。",

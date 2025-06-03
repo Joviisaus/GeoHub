@@ -9,7 +9,7 @@ const footerLinks = [
   {
     section: "关于本站点",
     links: [
-      { name: "仓库地址", url: "https://github.com/Joviisaus/MeshHub" },
+      { name: "仓库地址", url: "https://github.com/Joviisaus/GeoHub" },
       { name: "主题", url: "https://github.com/mearashadowfax/ScrewFast" },
       { name: "构建", url: "https://astro.build/" },
     ],

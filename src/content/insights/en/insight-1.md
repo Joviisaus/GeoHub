@@ -1,7 +1,7 @@
 ---
 title: "The Future of Construction Technology"
 description: "Explore ScrewFast's pioneering role in revolutionizing construction through advanced technology and innovative solutions."
-cardImage: "@/images/hutao.png"
+cardImage: "@/images/insights/insight-1.png"
 cardImageAlt: "Top view mechanical tools arrangement"
 ---
 ## 线性规划

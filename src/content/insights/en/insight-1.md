@@ -1,7 +1,7 @@
 ---
 title: "网格软件项目课程目录"
 description: "详细列举课程中的每个专题的学习资料，如果有优质资源欢迎私信或发PR进行补充！"
-cardImage: "@/images/insights/insight-1.avif"
+cardImage: "@/images/insights/insight-1.png"
 cardImageAlt: ""
 ---
 

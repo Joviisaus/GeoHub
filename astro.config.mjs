@@ -3,6 +3,8 @@ import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 
 import mdx from "@astrojs/mdx";
 
@@ -12,6 +14,10 @@ export default defineConfig({
   site: "https://screwfast.uk",
   image: {
     domains: ["images.unsplash.com"],
+  },
+  markdown: {
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex],
   },
   // i18n: {
   //   defaultLocale: "en",

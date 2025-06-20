@@ -92,6 +92,11 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
 <style is:global>
   :root {
     --transition-cubic: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --list-margin: 1.5rem 0;
+    --list-padding-left: 1.75rem;
+    --annotation-bg: #f8f9fa;
+    --annotation-border-left: 3px solid #e9ecef;
+    --annotation-padding: 0.5rem 1rem;
   }
 
   html {
@@ -108,50 +113,216 @@ const pageTitle: string = `${post.data.title} | ${SITE.title}`;
     scroll-margin-top: 3rem;
   }
 
-  h2 {
-    font-size: 1.5rem;
-    line-height: 2rem;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5rem 0;
+	color: rgb(var(--black));
+	line-height: 1.2;
+}
+h1 {
+	font-size: 2.052em;
+	counter-reset: heading2;
+}
+h2 {
+	font-size: 1.541em;
+	counter-increment: heading2;
+	counter-reset: heading3;
+}
+h3 {
+	font-size: 1.453em;
+	counter-increment: heading3;
+	counter-reset: heading4;
+}
+h4 {
+	font-size: 1.363em;
+	counter-increment: heading4;
+}
+h5 {
+	font-size: 1.25em;
+}
+h6 {
+	font-size: 1.15em;
+}
+h2::before {
+	content: "§ " counter(heading2) " ";
+	color: var(--color-sky-700);
+	}
+h3::before {
+content: ;
+color: var(--color-sky-600);
+}
+h4::before {
+color: var(--color-sky-500);
+}
+strong,
+b {
+	font-weight: 700;
+}
+a {
+	color: var(--color-sky-500);
+}
+a:hover {
+	color: var(--color-sky-700);
+}
+p {
+	margin-bottom: 0.5em;
+}
+.prose p {
+	margin-bottom: 1em;
+}
+textarea {
+	width: 100%;
+	font-size: 16px;
+}
+input {
+	font-size: 16px;
+}
+table {
+	width: 100%;
+  border: 1px solid var(--color-sky-700)
+}
+table caption{
+  font-weight: bold;
+}
+table th{
+  border: 2px solid var(--color-sky-700);
+
+}
+table td{
+  border: 1px solid var(--color-sky-500)
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+blockquote {
+    position: relative;
+    padding: 6px 4px;
+    box-sizing: border-box;
+    font-size: 0.8em;
+    color: var(--gray);
+    border-left: solid 20px var(--color-sky-200);
+    background: var(--color-sky-50);
+    border-radius: 8px;
+}
+
+
+blockquote:before{
+    display: inline-block;
+    position: absolute;
+    top: 15px;
+    left: -23px;
+    content: "💭";
+    font-size: 18px;
+    font-weight: 900;
+}
+
+
+blockquote p {
+    position: relative;
+    padding: 0;
+    margin: 10px 0;
+    z-index: 3;
+    line-height: 1.7;
+}
+
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: var(---color-indigo-600);
+    font-size: 0.6em;
+}
+hr {
+	border-top: 1px solid rgb(var(--gray-light));
+}
+
+time{
+	margin-top: 0;
+	font-size: 15px;
+}
+
+a:hover {
+  color: var(--color-sky-300)
+}
+
+#element {
+    transform-style: preserve-3d;
+    transition: all .1s;
+}
+
+nav.toc {
+  display: block;
+  position: sticky;
+  top: 0.5rem;
+  padding-left: 1rem;
+}
+
+  ol {
+    margin: var(--list-margin);
+    padding-left: 0;
+    list-style: none;
+    counter-reset: ol-counter;
   }
 
-  h3 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-  }
-
-  h4 {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
-  p {
-    margin-top: 1.5rem;
-  }
-
-  #toc li {
-    display: flex;
-    align-items: center;
-    opacity: 0.8;
+  ol li {
+    margin-bottom: 0.5rem;
+    margin-left: var(--list-padding-left);
+    position: relative;
     transition: all 300ms var(--transition-cubic);
   }
 
-  #toc li.selected {
-    opacity: 1;
+  ol li::before {
+    content: counter(ol-counter) ".";
+    counter-increment: ol-counter;
+    position: absolute;
+    left: calc(-1 * var(--list-padding-left));
+    font-weight: bold;
+    color: var(--list-marker-color);
+    width: calc(var(--list-padding-left) - 0.5rem);
+    text-align: right;
   }
 
-  #toc li svg {
-    width: 0;
-    height: 0;
-    transition:
-      height 400ms var(--transition-cubic),
-      width 400ms var(--transition-cubic);
+  ol li:hover {
+    opacity: 0.9;
   }
 
-  #toc li.selected svg {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.3rem;
+  /* 新增：无序列表样式 */
+  ul {
+    margin: var(--list-margin);
+    padding-left: 0;
+    list-style: none;
   }
+
+  ul li {
+    margin-bottom: 0.5rem;
+    margin-left: var(--list-padding-left);
+    position: relative;
+    transition: all 300ms var(--transition-cubic);
+  }
+
+  ul li::before {
+    content: "•";
+    position: absolute;
+    left: calc(-1 * var(--list-padding-left) + 0.25rem);
+    color: var(--list-marker-color);
+    font-size: var(--list-marker-size);
+    line-height: 1.5;
+  }
+
+  ul li:hover {
+    opacity: 0.9;
+  }
+
+
+
 </style>
+
 
 <script>
   const onScroll = (): void => {

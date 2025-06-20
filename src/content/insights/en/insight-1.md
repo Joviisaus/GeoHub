@@ -6,6 +6,18 @@ cardImageAlt: "Top view mechanical tools arrangement"
 ---
 ## 线性规划
 
+| **开发阶段**       | **HTML 技术**               | **CSS 技术**                | **JavaScript 技术**          | **构建工具**         |
+|--------------------|-----------------------------|-----------------------------|-----------------------------|----------------------|
+| **基础开发**       | HTML5 语义化标签            | CSS3 弹性布局(Flexbox)      | ES6+ 新特性(箭头函数、Promise)| Webpack 5            |
+| **框架开发**       | JSX/TSX 语法拓展            | Tailwind CSS 实用类框架     | React/Vue 组件化开发        | Vite 快速构建工具    |
+| **状态管理**       | 无特殊标签                  | 自定义主题变量              | Redux/Mobx 状态管理库       | Rollup 模块打包工具  |
+| **工程化实践**     | 模板引擎(如 Handlebars)     | CSS Modules 作用域隔离      | TypeScript 类型系统         | ESLint + Prettier    |
+| **性能优化**       | 懒加载标签(`loading="lazy"`) | 响应式设计媒体查询          | 代码分割(Code Splitting)    | Webpack Bundle Analyzer|
+| **跨端开发**       | 无特殊标签                  | 响应式单位(rem/vw)          | React Native/Flutter 跨平台  | NativeScript 编译工具|
+
+
+
+
 ## 无约束优化
 
 ### 单目标优化
@@ -20,9 +32,12 @@ cardImageAlt: "Top view mechanical tools arrangement"
 > 如果 $A=E_n$ ,则$p$ 和 $q$ 正交，共轭可以看作正交的推广
 > 
 > 若有$m$ 个 $n$ 元向量，$p_1,p_2,... , p_m$ 有
-> $$
+
+$$
  p_i^TAp_j = 0(i\neq j,i,j = 1,2,...,m)
  $$
+
+
  则称这个向量组为$A$的共轭方向组
 
 ##### 定理
@@ -48,19 +63,22 @@ cardImageAlt: "Top view mechanical tools arrangement"
 - 加速搜索
 - 调整搜索方向
 ##### 定理
-- 对于正定二次函数 $f(x) = a+b^Tx+\frac{1}{2}x^TAx,d^0,d^1,...,d^{k-1} \in R^n(k \textless n)$ 是矩阵$A$ 的共轭方向组，如果分别从初始点 $x^0$ 和 $x^1$ 出发，依次沿方向 $d^0,d^1,...,d^{k-1}$ 进行一维搜索，并设最后得到的点是 $x^a$ 和 $x^b$ ，如果 $x^a \neq x^b$ 那么 $x^a-x^b$ 与 $d_0,d_1,...,d_{k-1}$ 关于 $A$ 是共轭的，即 $$(x^a-x^b)^T Ad^j=0,j=0,1,2,...,k-1$$
+- 对于正定二次函数 $f(x) = a+b^Tx+\frac{1}{2}x^TAx,d^0,d^1,...,d^{k-1} \in R^n(k \le n)$ 是矩阵$A$ 的共轭方向组，如果分别从初始点 $x^0$ 和 $x^1$ 出发，依次沿方向 $d^0,d^1,...,d^{k-1}$ 进行一维搜索，并设最后得到的点是 $x^a$ 和 $x^b$ ，如果 $x^a \neq x^b$ 那么 $x^a-x^b$ 与 $d_0,d_1,...,d_{k-1}$ 关于 $A$ 是共轭的，即 $$(x^a-x^b)^T Ad^j=0,j=0,1,2,...,k-1$$
 ##### Hooke-Jeeves 方法
 两类移动
 - **探测搜索**：在初始点周围探测，寻找有利的下降方向
 - **模式搜索**：沿着有利的方向加速，获得新的初始点
 
 ## 约束最优化
-基本形式$$ 
+基本形式
+$$ 
 \begin{array}{ll}
 \min_{x\in R^n} f(x) \\ \\
 s.t. h_i(x) = 0 (i=1,2,...,l) \\
 h_i(x\leq 0) (i=l+1,l+2,...,m) 
-\end{array}$$
+\end{array}
+$$
+
 其中 $f,h_i,i=1,2,...,m$ 均为 $R^n$ 或其子集上的连续可微实值函数
 
 - 满足所有约束条件构成的点叫做**可行域**，记为 $\Omega$
@@ -68,25 +86,36 @@ h_i(x\leq 0) (i=l+1,l+2,...,m)
 - **可行方向**: 非零向量 $d$ 称为点 $x^* \in \Omega$ 处的一个可行方向，如果存在一个数 $t^* \gt 0$ ，使得对于任意的 $t \in (0,t^*),都有x^* + td \in \Omega$，非零向量 $d$ 称为点 $x^* \in \Omega$ 的一个可行下降方向，如果存在一个数 $t^* \gt 0$,使得对任意的 $t \in (0,t^*)$ 都有 $f(x^*+td) \lt f(x^*)$ 且 $x^*+td \in \Omega$
 
 #### 非线性规划的一阶最优性条件
+
 $$
 \begin{array}{ll}
 \min f(x) \\
 
 	s.t.h_i(x)= 0 (i=1,2,...,l)
 	\end{array}
-	$$
+$$
+
+| table | table|
+
 ##### 必要条件：
 存在 $\mu^* = (\mu_1^*,...,\mu_l^*)^T \in R^l$ 使得$$\nabla_xL(x^*,\mu^*)=\nabla f(x^*)+\sum_{i=1}^l\mu_i^*\nabla h_i(x^*) = 0$$
 其中 $L(x,\mu) := f(x)+\sum_{i=1}^l\mu_ih_i(x)$ 
 
 ##### Karush-Kuhn-Tucker 条件
-存在 $\lambda^* \in R^m$ 使得$$\nabla_xL(x^*,\lambda^*)=\nabla f(x^*)+\sum_{i=1}^l\lambda_i^*\nabla h_i(x^*) = 0$$
-$$\begin{array}{ll}
+存在 $\lambda^* \in R^m$ 使得
+$$
+\nabla_xL(x^*,\lambda^*)=\nabla f(x^*)+\sum_{i=1}^l\lambda_i^*\nabla h_i(x^*) = 0
+$$
+
+$$
+\begin{array}{ll}
 h_i(x^*) = 0,i = 1,2,...,l\\
 h_i(x^*) \le = 0,i= l+1,l+2,...,m\\
 \lambda_i^*h_i(x^*)= 0,i = l+1,l+2,...,m\\
 \lambda_i^* \ge 0,i=l+1,l+2,...,m
-\end{array}$$
+\end{array}
+$$
+
 其中 $L(x,\mu) := f(x)+\sum_{i=1}^l\lambda_ih_i(x)$ 
 
 #### 凸规划问题
@@ -97,7 +126,8 @@ $$
 
 	s.t.h_i(x)= 0 (i=1,2,...,l)
 	\end{array}
-	$$
+$$
+
 **凸函数的充要条件**
 对于凸集$\Omega$ 上的可微函数，对于所有的$x,y \in \Omega$都有$$ f(u) \ge f(x) + (\nabla f(x))^T(y-x) $$
 **定理：凸规划问题的 KKT 点必为该问题的最优解**
@@ -107,10 +137,13 @@ $$
 $\hat{x} \in \Omega$ 称为绝对可行点，$x^*$为 KKT 点
 
 #### 二次规划
-一般形式$$ \begin{array}{ll}
+一般形式
+$$
+ \begin{array}{ll}
 \min q(x) = \frac{1}{2} x^TGx + c^Tx\\
 s.t. \begin{array}{ll}
 a_i^T x = b_i(i=1,2,...,l)\\
 a_i^T x \le b_i(i=l+1,l+2,...,p)
 \end{array}
-\end{array}$$
+\end{array}
+$$
